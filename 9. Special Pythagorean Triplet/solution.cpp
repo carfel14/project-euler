@@ -5,15 +5,21 @@ using namespace std;
 class Solution {
 public:
     int specialPythagoreanTriplet() {
-        int goal = 1000;
-        int a = 3, b = 4, c = 5;
-        int multiplier = 1;
-        while (multiplier * (a + b + c) <= 1000) {
-            if (multiplier * (a + b + c) == 1000) return a * b *c;
-            multiplier++;
+        for (int a = 500; a > 0; a--) {
+            for (int b = 500; b > 0; b--) {
+                int c = 1000 - a - b;
+                if (isTriplet(a, b, c)) {
+                    cout << a << ' ' << b << ' ' << c << endl;
+                    return a * b * c;
+                }
+                    
+            }
         }
-
         return -1;
+    }
+
+    bool isTriplet(int a, int b, int c) {
+        return (a * a + b * b == c * c);
     }
 };
 
