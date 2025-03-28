@@ -43,8 +43,7 @@ public:
         }
 
         long long number = 0;
-        int digitsToTake = min(10, firstNonZero + 1);
-        for (int i = firstNonZero; i >= max(0, firstNonZero - 9); i--) {
+        for (int i = firstNonZero; i >= firstNonZero - 9; i--) {
             number = number * 10 + digits[i];
         }
 
